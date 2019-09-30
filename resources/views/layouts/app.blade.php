@@ -29,6 +29,14 @@
         </div>
     </div>
 
+    <div id="overlayNew">
+            <div id="wrapperNew">
+                <input type="text" placeholder="title" id="titleNew"><br/>
+                <input type="text" placeholder="content" id="contentNew"><br/>
+                <button id="createBtn">SUBMIT</button>
+            </div>
+        </div>
+
         <div id="overlayComm">
                 <div id="wrapperComm">
                     <input type="text" placeholder="content" id="contentComm"><br/>

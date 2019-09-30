@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Thread;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,12 @@ Route::middleware('auth:api')->get('/thread/{thread}', function (Request $reques
 
 Route::resource('thread', 'ThreadController');
 Route::resource('comment', 'CommentController');
+
+Route::post("new-thread", function(Request $request){
+    $thread=new Thread;
+    $thread->title=$request->title;
+    $thread->content=$request->content;
+    $thread->user_id=$request->user_id;
+    $thread->save();
+    return $thread->toJson();
+});
