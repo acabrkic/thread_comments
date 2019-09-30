@@ -9,7 +9,7 @@ $factory->define(Thread::class, function (Faker $faker) {
     $users = App\User::pluck('id')->toArray();
     return [
         'user_id' => $faker->randomElement($users),
-        'title' => $faker->realText(),
-        'content' => $faker->paragraph
+        'title' => $faker->sentence,
+        'content' => $faker->realText()
     ];
 });

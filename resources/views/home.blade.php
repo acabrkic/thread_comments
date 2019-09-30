@@ -4,8 +4,9 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+                @foreach($threads as $thread)
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">{{$thread->title}}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,10 +15,19 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                   {{$thread->content}}
+                    
                 </div>
             </div>
+            <br/>
+            @endforeach
         </div>
     </div>
 </div>
+
+<script>
+    console.log("{{Auth::guard('api')->user()}}");
+    console.log("{{Auth::id()}}");
+</script>
+
 @endsection
