@@ -30,7 +30,7 @@
                     @foreach($comments as $comment)
                     @if($comment->thread_id==$thread->id)
                     <br />
-                    <div class="card">
+            <div class="card" id="cardComm{{$comment->id}}">
                         <div class="card-body">
                            <span id="cid{{$comment->id}}"> {{$comment->content}}</span>
                         </div>
@@ -149,6 +149,7 @@
             },
             body: JSON.stringify(data)
         }).then(result => result.text()).then(result => {
+            document.getElementById("cardComm"+this.dataset.id).style.display = "none";
         document.getElementById("overlayComm").style.display = "none";
         });
     })
