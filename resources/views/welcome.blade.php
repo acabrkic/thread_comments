@@ -73,6 +73,10 @@
             title: document.getElementById("title").value,
             content: document.getElementById("content").value
         }
+
+        if(data.title=="" || data.content==""){
+            return false;
+        }
         fetch("/api/thread/" + this.dataset.id, {
             method: "PUT",
             headers: {

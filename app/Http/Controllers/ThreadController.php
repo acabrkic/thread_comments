@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Thread;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Log;
 
 class ThreadController extends Controller
@@ -37,12 +38,7 @@ class ThreadController extends Controller
     public function store(Request $request)
     {
         
-        $thread=new Thread;
-        $thread->title=$request->title;
-        $thread->content=$request->content;
-        $thread->user_id=$request->user_id;
-        $thread->save();
-        return $thread->toJson();
+       #Doesn't work?
     }
 
     /**
@@ -64,7 +60,7 @@ class ThreadController extends Controller
      */
     public function edit(Thread $thread)
     {
-        return 'testic';
+        //
     }
 
     /**
@@ -76,9 +72,17 @@ class ThreadController extends Controller
      */
     public function update(Request $request, Thread $thread)
     {
-        $thread->title=$request->title;
+        $start_time=\Carbon\Carbon::parse($thread->updated_at);
+        $finish_time=\Carbon\Carbon::parse(\Carbon\Carbon::now());
+        if($start_time->diffInHours($finish_time, false)>6){
+            $thread->title=$request->title;
         $thread->content=$request->content;
+
+        
         $thread->save();
+
+        }
+        
         return $thread->toJson();
     }
 
