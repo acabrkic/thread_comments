@@ -101,6 +101,7 @@
             },
             body: JSON.stringify(data)
         }).then(result => result.text()).then(result => {
+            document.getElementById("id"+this.dataset.id).style.display="none";
         document.getElementById("overlay").style.display = "none";
         });
     })

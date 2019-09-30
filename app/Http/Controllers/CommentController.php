@@ -82,6 +82,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
-        //
+        $comment=Thread::find($comment->id);
+        $comment->delete();
+        
     }
 }
