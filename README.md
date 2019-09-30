@@ -1,9 +1,10 @@
 # thread_comments
 
-Run composer install
-Run npm install
-Create thread_comments DB
-Run php artisan migrate
-Run php artisan db:seed
+1. Run composer install
+2. Run npm install
+3. Create thread_comments DB
+4. copy .env from env_example
+5. Run php artisan migrate
+6. Run php artisan db:seed
 
 Views are at /home and /
