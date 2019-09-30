@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Log;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::middleware('auth:api')->get('/thread/{thread}', function (Request $request) {
+    return "test";
 });
 
 Route::resource('thread', 'ThreadController');

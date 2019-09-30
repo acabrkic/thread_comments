@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Thread;
 use Illuminate\Http\Request;
+use Log;
 
 class ThreadController extends Controller
 {
@@ -46,7 +47,7 @@ class ThreadController extends Controller
      */
     public function show(Thread $thread)
     {
-        //
+        return $thread;
     }
 
     /**
@@ -57,7 +58,7 @@ class ThreadController extends Controller
      */
     public function edit(Thread $thread)
     {
-        //
+        return 'testic';
     }
 
     /**
@@ -69,7 +70,10 @@ class ThreadController extends Controller
      */
     public function update(Request $request, Thread $thread)
     {
-        //
+        $thread->title=$request->title;
+        $thread->content=$request->content;
+        $thread->save();
+        return $thread->toJson();
     }
 
     /**
@@ -80,6 +84,6 @@ class ThreadController extends Controller
      */
     public function destroy(Thread $thread)
     {
-        //
+        return $thread;
     }
 }

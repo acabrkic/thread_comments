@@ -25,9 +25,4 @@
     </div>
 </div>
 
-<script>
-    console.log("{{Auth::guard('api')->user()}}");
-    console.log("{{Auth::id()}}");
-</script>
-
 @endsection

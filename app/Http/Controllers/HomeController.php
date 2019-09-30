@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
+use App\Comment;
 use App\Thread;
 
 class HomeController extends Controller
@@ -26,5 +28,13 @@ class HomeController extends Controller
     {
         $threads=['threads'=>Thread::all()];
         return view('home', $threads);
+    }
+
+    public function indexWithComments(){
+
+        $threads=Thread::all();
+        $comments=Comment::all();
+        $data=['threads'=>$threads, 'comments'=>$comments];
+        return view('welcome', $data);
     }
 }

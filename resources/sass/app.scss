@@ -6,3 +6,44 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+#overlay{
+    height:100%;
+    width:100%;
+    position:fixed;
+    background:rgba(0,0,0,0.5);
+    z-index:1;
+    display:none;
+
+    #wrapper{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        
+        input{
+            margin-bottom:15px;
+        }
+    }
+}
+
+#overlayComm{
+    height:100%;
+    width:100%;
+    position:fixed;
+    background:rgba(0,0,0,0.5);
+    z-index:1;
+    display:none;
+
+    #wrapperComm{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        
+        input{
+            margin-bottom:15px;
+        }
+    }
+}

@@ -20,6 +20,22 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay">
+        <div id="wrapper">
+            <input type="text" placeholder="title" id="title"><br/>
+            <input type="text" placeholder="content" id="content"><br/>
+            <button id="updateBtn">SUBMIT</button>
+            <button id="deleteBtn">DELETE</button>
+        </div>
+    </div>
+
+        <div id="overlayComm">
+                <div id="wrapperComm">
+                    <input type="text" placeholder="content" id="contentComm"><br/>
+                    <button id="updateBtnComm">SUBMIT</button>
+                    <button id="deleteBtnComm">DELETE</button>
+                </div>
+    </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

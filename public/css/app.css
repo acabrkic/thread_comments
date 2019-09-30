@@ -10644,3 +10644,43 @@ a.text-dark:focus {
   }
 }
 
+#overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+}
+
+#overlay #wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#overlay #wrapper input {
+  margin-bottom: 15px;
+}
+
+#overlayComm {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  display: none;
+}
+
+#overlayComm #wrapperComm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#overlayComm #wrapperComm input {
+  margin-bottom: 15px;
+}
+
